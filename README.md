@@ -57,7 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 Made changes on the tic-tac-toe code that we've covered in lesson.
-[![img][product-screenshot]](/assets/gamePlay.png)
+![img](/assets/gamePlay.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -120,4 +120,3 @@ Don't forget to give the project a star! Thanks again!
 [license-url]: https://github.com/baranacikgoz/dynamic-tic-tac-toe-game/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/baran-acikgoz/
-[product-screenshot]: /assets/gamPlay.png
