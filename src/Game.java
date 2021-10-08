@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Game {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Welcome the tic-tac-toe.\n Please provide int n for n x n board: ");
+		System.out.println("Welcome the tic-tac-toe.\nPlease provide n for n x n board: ");
 		try {
 			TicTacToe game = new TicTacToe(scanner.nextInt());
 			game.playGame();
@@ -52,7 +52,7 @@ class TicTacToe {
 			try {
 				putMark(i, j);
 			} catch (Exception e) {
-				System.out.println("Error: Provide a valid coordinates.");
+				System.out.println(e.getMessage());
 			}
 
 			GUI();
@@ -63,14 +63,14 @@ class TicTacToe {
 
 	public void putMark(int i, int j) throws IllegalArgumentException {// i and j stands for coordinate x,y directions
 		if ((i < 0) || (i > size - 1) || (j < 0) || (j > size - 1)) {
-			throw new IllegalArgumentException("Board limits are exceed.");
+			throw new IllegalArgumentException("Board limits are exceeded. Please try again: ");
 		}
 		if (board[i][j] != EMPTY) {
-			throw new IllegalArgumentException("The position you've tried to mark is not empty");
+			throw new IllegalArgumentException("The position you've tried to mark is not empty. Please try again: ");
 		}
 		totalEntries++;
 		if (totalEntries == size * size) {
-			System.out.println("Nobody wins");
+			System.out.println("Tie : Nobody wins!");
 			System.exit(1);
 		}
 		board[i][j] = currentPlayer;
@@ -91,7 +91,7 @@ class TicTacToe {
 			}
 		}
 
-		if (i + j == board.length) { // check if the point is in the other diagonal
+		if (i + j == board.length -1) { // check if the point is in the other diagonal
 			int diagonal2Total = 0;
 			int a = board.length - 1;
 			int b = 0;
@@ -112,9 +112,18 @@ class TicTacToe {
 		if (rowTotal == player * board.length) {
 			declareWinner(player);
 		}
+		
+		int columnTotal = 0;
+		for(int m=0; m < board.length; m++ ) {
+			columnTotal += board[m][j];
+		}
+		if (columnTotal == player * board.length) {
+			declareWinner(player);
+		}
 	}
 
 	public void declareWinner(int player) {
+		GUI();
 		StringBuilder sb = new StringBuilder();
 		switch (player) {
 		case -1 -> sb.append("O");
