@@ -59,8 +59,6 @@
 Made changes on the tic-tac-toe code that we've covered in lesson.
 ![img](/assets/gamePlay.png)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ### Built With
 
 * [Java](https://www.oracle.com/en/java/)
@@ -87,6 +85,8 @@ Made changes on the tic-tac-toe code that we've covered in lesson.
    ```
    java Game
    ```
+   
+<p align="right">(<a href="#top">back to top</a>)</p>
    
 <!-- CONTRIBUTING -->
 ## Contributing
